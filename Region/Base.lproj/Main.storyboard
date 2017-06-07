@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="lU8-94-shA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="njd-ye-klZ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="DZE-0a-Yf3"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VQ1-uo-8Zd">
+                                <rect key="frame" x="298" y="607" width="31" height="30"/>
+                                <state key="normal" title="LOG"/>
+                                <connections>
+                                    <action selector="logAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q5X-9I-j6r"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="VQ1-uo-8Zd" secondAttribute="trailing" constant="30" id="IPD-4U-c7Q"/>
+                            <constraint firstAttribute="trailing" secondItem="njd-ye-klZ" secondAttribute="trailing" id="JBb-kO-yDm"/>
+                            <constraint firstItem="njd-ye-klZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Ndr-21-0gU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="njd-ye-klZ" secondAttribute="bottom" id="dk9-be-GWu"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VQ1-uo-8Zd" secondAttribute="bottom" constant="30" id="gnd-Nt-BJN"/>
+                            <constraint firstItem="njd-ye-klZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="o7Q-oc-doF"/>
+                            <constraint firstItem="njd-ye-klZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="wZV-YI-QWH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ogi-og-Bcd"/>
+                    <connections>
+                        <outlet property="mapView" destination="njd-ye-klZ" id="ZDS-aH-Q9W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9gl-c5-Cdn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lU8-94-shA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8is-IO-zGM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="7ai-Aq-4yL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pL9-s9-C5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="184.80000000000001" y="-543.77811094452773"/>
+        </scene>
+    </scenes>
+</document>
