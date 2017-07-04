@@ -55,8 +55,8 @@
     //设置检测区域
     for (StudentInfoModel *student in [RegionManager shareInstance].studentArray) {
         //国际标准坐标转换为火星坐标
-        CLLocationCoordinate2D gcjRegionLocation = [JZLocationConverter wgs84ToGcj02:student.location];
-        MKCircle *circle =[MKCircle circleWithCenterCoordinate:gcjRegionLocation radius:kRegionRadius];
+        //CLLocationCoordinate2D gcjRegionLocation = [JZLocationConverter wgs84ToGcj02:student.location];
+        MKCircle *circle =[MKCircle circleWithCenterCoordinate:student.location radius:kRegionRadius];
         //先添加，在回调方法中创建覆盖物
         [_mapView addOverlay:circle];
     }
@@ -103,8 +103,7 @@
     CGPoint touchPoint = [gestureRecognizer locationInView:self.mapView];//这里touchPoint是点击的某点在地图控件中的位置
     CLLocationCoordinate2D touchMapCoordinate =
     [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];//这里touchMapCoordinate就是该点的经纬度了
-    //国际标准坐标转换为火星坐标
-//    CLLocationCoordinate2D gcjPt = [JZLocationConverter wgs84ToGcj02:touchMapCoordinate];÷
+
     NSLog(@"touching %f,%f",touchMapCoordinate.latitude,touchMapCoordinate.longitude);
     
 }
